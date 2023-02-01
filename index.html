@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+    <title>Tarik Sohan</title>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("7omF1ycFth73b1wMC");
+   })();
+</script>
+  </head>
+  <body class="dark-theme  ">
+
+  <!-- LOADER -->
+<div class="preloader" id="preloader" ></div>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="logo.png" alt="logo" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a
+              href="#skills"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Skills
+            </a>
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects
+            </a>
+          </li>
+          <li class="nav__link">
+            <a
+            onclick="toggleModal()" 
+              href="#"
+              class= "nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Contact
+            </a>
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()" >
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i  class="fas fa-adjust"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <!-- <h1 class="title">Hello</h1> -->
+          <h1 class="title orange">
+           Tarik Sohan
+           
+           <!-- <span class="wave">👋</span> -->
+          </h1>
+         
+            <p class="header__para">
+           Interactive frontend web developer
+    
+            <!-- <br />
+           Here's a bit more <b class="orange">about me.</b>  -->
+          </p>  
+
+          <a href="#contact"  onclick="toggleModal()" ><button class="header-button">About me</button></a>
+          <div class="social__list">
+            <a href="#" class="social__link click">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social__link click">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social__link click">
+              <i class="fas fa-file-pdf"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+     <a href="#">
+      <button class="mail__button click" onclick="toggleModal()">
+        <i class="fas fa-envelope"></i>
+      </button>
+     </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">About me</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Frontend Software Engineer
+          </h4>
+          <p class="modal__para">
+            I'm a self-motivated
+            <b class="orange">frontend engineer</b> passionate about developing
+            user friendly websites.
+            <br />
+            I'm currently working on difficult enigneering problems and eager to
+            <b class="orange">learn new technologies</b> from a team consisting
+            some of the most <b class="orange">talented</b> and
+            <b class="orange">experienced</b> software engineers every day.
+          </p>
+          <!-- <div class="modal__languages">
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                alt="HTML"
+              />
+            </figure>
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                alt="CSS"
+              />
+            </figure>
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                alt="JAVASCRIPT"
+              />
+            </figure>
+            <figure class="modal__language">
+              <img
+                class="modal__language--img"
+                src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                alt="REACT"
+              />
+            </figure>
+          </div> -->
+        </div>
+        <div class="modal__half modal__contact">
+          <h3 class="modal__title modal__title--contact">Let's have a chat</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new opportunities.</h4>
+          <form  id="contact__form" onsubmit='contact(event)'>
+            <div class="form__item">
+              <label class="form__item--label" >Name</label>
+              <input  class="input" type="text" name="user_name" ></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label" >Email</label>
+              <input  class="input" type="email" name="user_email" ></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label" >Message</label>
+              <textarea  class="input" type="text" name="message" ></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send it my way</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message ! Looking forward to speaking to you soon.
+          </div>
+          <i onclick="toggleModal()"  class="fas fa-times modal__exit click"></i> <!--MIGHT HAVE TO REMOVE --> 
+        </div>
+      </div>
+      <img src="Circle.svg"  class="shape shape--0" >
+      <img src="Half Circle.svg"  class="shape shape--1">
+      <img src="Squigly.svg"  class="shape shape--2" >
+      <img src="Triangle.svg"  class="shape shape--3" >
+      <img src="Squigly.svg"  class="shape shape--4" >
+      <img src="Circle.svg"  class="shape shape--5" >
+      <img src="Squigly.svg"  class="shape shape--6" >
+      <img src="Triangle.svg"  class="shape shape--7" >
+      <img src="Half Circle.svg"  class="shape shape--8" >
+     
+
+    </section>
+    <section id="skills">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">Technologies I know</h1>
+          <div class="skill__list">
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">HTML</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">CSS</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">JAVASCRIPT</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">REACT</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://cdn.iconscout.com/icon/free/png-128/git-17-1175218.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">GIT</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                  src="https://cdn.iconscout.com/icon/free/png-128/github-169-1174970.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">GITHUB</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                src="tailwind-css.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">TAILWIND CSS</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                src="typescript.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">TYPESCRIPT</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                src="npm.png"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">NPM</span>
+            </div>
+            <div class="skill">
+              <figure class="skill__img--wrapper">
+                <img
+                  class="skill__img"
+                src="redux.svg"
+                  alt="skills"
+                />
+              </figure>
+              <span class="skill__name">REDUX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="orange">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="Marceline.PNG" alt="" class="project__image" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Marceline</h3>
+                  <h4 class="project__description--sub-title">
+                   REACT, TYPESCRIPT, TAILWIND CSS, FRAMER MOTION
+                  </h4>
+                  <p class="project__description--para">
+                Marceline is a fitness website made with react, typescript for types and framer motion for animation and transition.
+                 It's fully responsive and user friendly.
+                  </p>
+                  <div class="project__description--links">
+                
+                    <a href="https://github.com/tarik-sohan/marceline" class="project__description--link">
+                    <button class="project__button-github" ><i class="fab fa-github"></i></button>  
+                    </a>
+                    <a href="https://marcelinegym.netlify.app/">
+                    <button class="project__button-github" >Visit Site</button>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <!-- <h1 class="section__title">
+            Here are some of my <span class="orange">projects</span>
+          </h1> -->
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="Youtube.PNG" alt="" class="project__image" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">YouTube clone</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML,CSS,JAVASCRIPT,REACT, MUI, REACT-ROUTER, API
+                  </h4>
+                  <p class="project__description--para">
+                    Used Rapid api for api and MUI components for styling. Videos can be searched and played similar to youtube.
+                  </p>
+                  <div class="project__description--links">
+                
+                    <a href="https://github.com/tarik-sohan/youtube-clone" class="project__description--link">
+                    <button class="project__button-github" ><i class="fab fa-github"></i></button>  
+                    </a>
+                    <a href="https://ytclonepro.netlify.app">
+                    <button class="project__button-github" >Visit Site</button>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <!-- <h1 class="section__title">
+            Here are some of my <span class="orange">projects</span>
+          </h1> -->
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img src="Flymars.PNG" alt="" class="project__image" />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">FLY MARS</h3>
+                  <h4 class="project__description--sub-title">
+                    HTML,CSS,JAVASCRIPT
+                  </h4>
+                  <p class="project__description--para">
+                 Fly Mars is a fictional travelling company website. Made with semantic HTML, CSS & JavaScript animations and transitions.
+                  </p>
+                  <div class="project__description--links">
+                
+                    <a href="https://github.com/tarik-sohan/flymars" class="project__description--link">
+                    <button class="project__button-github" ><i class="fab fa-github"></i></button>  
+                    </a>
+                   <a href="https://flymars.netlify.app">
+                    <button class="project__button-github">Visit Site</button>
+                  </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo--img" src="logo.png" alt="logo" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Github</a
+            >
+            <a
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >LinkedIn</a
+            >
+            <a onclick="toggleModal()"
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Contact</a
+            >
+            <a
+              href=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Resume</a
+            >
+          </div>
+          <div class="footer__copyright">&copy;Tarik Sohan</div>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
