@@ -798,7 +798,7 @@ SHAPES
     #f06449,
     #e43603,
     #e85a19,
-    #020a4b
+    #f06449
   );
   box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
 }
@@ -829,4 +829,19 @@ SHAPES
 .project__button-github {
   background-image: linear-gradient(to right, #f06449, #e43603, #e85a19);
   box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+
+/* cursor style */
+
+.circle {
+  height: 24px;
+  width: 24px;
+  border-radius: 24px;
+  background-color: black;
+  position: fixed; 
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999999; 
 }
